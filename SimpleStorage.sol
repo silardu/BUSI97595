@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity >=0.8.0 <0.9.0 ; // solidity versions
 
 contract SimpleStorage {
     // Define two state variables to store the favorite module and lecture
-    string private favModule;
-    string private favTA;
+    string public favModule;
+    string public favTA;
 
     // Function to set the favorite module and lecture
     function setFavorites(string memory _favModule, string memory _favTA) public {
