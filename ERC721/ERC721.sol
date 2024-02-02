@@ -18,19 +18,13 @@ import {IERC721Errors} from "../../interfaces/draft-IERC6093.sol";
  */
 abstract contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Errors {
     using Strings for uint256;
-
     // Token name
     string private _name;
-
     // Token symbol
     string private _symbol;
-
     mapping(uint256 tokenId => address) private _owners;
-
     mapping(address owner => uint256) private _balances;
-
     mapping(uint256 tokenId => address) private _tokenApprovals;
-
     mapping(address owner => mapping(address operator => bool)) private _operatorApprovals;
 
     /**
@@ -87,7 +81,6 @@ abstract contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Er
      */
     function tokenURI(uint256 tokenId) public view virtual returns (string memory) {
         _requireOwned(tokenId);
-
         string memory baseURI = _baseURI();
         return bytes(baseURI).length > 0 ? string.concat(baseURI, tokenId.toString()) : "";
     }
