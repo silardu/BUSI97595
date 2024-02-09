@@ -2,7 +2,7 @@
 pragma solidity >=0.8.0 <0.9.0 ;
 
 contract SimpleAMM {
-    uint public constant K = 10_000; // Constant product
+    uint public constant K = 50_000; // Constant product
     uint public reserveTokenA;
     uint public reserveTokenB;
 
